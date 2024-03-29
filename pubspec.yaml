@@ -41,6 +41,12 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   image_picker: ^1.0.7
   payment: ^0.0.1
+  shared_preferences: ^2.2.2
+  animated_custom_dropdown: ^3.0.0
+  timeline_tile: ^2.0.0
+  banner_listtile: ^2.3.0
+  flutter_slidable: ^3.1.0
+
   
 
 dev_dependencies:
@@ -110,6 +116,7 @@ flutter:
     - assets/strawberry.png
     - assets/esewa1.png
     - assets/edit.png
+    - assets/order.png
     
 
 

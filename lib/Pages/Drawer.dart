@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:keyboard/Login/LOgin.dart';
+import 'package:keyboard/checkout/final_order.dart';
 
 import 'package:keyboard/drawerwidget/details.dart';
 import 'package:keyboard/drawerwidget/location.dart';
+import 'package:keyboard/drawerwidget/orders.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -68,9 +70,14 @@ class CustomDrawer extends StatelessWidget {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("Settings"),
-              onTap: () => print("My Settings"),
+              leading: ImageIcon(
+                AssetImage("assets/order.png"),
+              ),
+              title: Text("My Orders"),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Orders()));
+              },
               trailing: Icon(Icons.arrow_forward_ios_rounded),
             ),
             Divider(),

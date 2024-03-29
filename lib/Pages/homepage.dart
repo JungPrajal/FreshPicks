@@ -5,7 +5,8 @@ import '../Widgets/Carousel.dart';
 import '../Widgets/Exotic.dart';
 import '../Widgets/Navbar.dart';
 import '../Widgets/ProductWidget.dart';
-import '../Pages/Drawer.dart'; // Import the Drawer page
+import '../Pages/Drawer.dart';
+import '../Widgets/dropdown.dart'; // Import the Drawer page
 // Import the GrocerySearchDelegate file
 
 class HomePage extends StatelessWidget {
@@ -59,15 +60,28 @@ class HomePage extends StatelessWidget {
                               color: Colors.black,
                             ),
                             SizedBox(
-                                width:
-                                    10), // Add some space between icon and text field
+                              width: 10,
+                            ), // Add some space between icon and text field
                             Expanded(
                               child: Text(
                                 "Search Your Groceries",
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
-                            Icon(Icons.filter_list),
+                            GestureDetector(
+                              onTap: () {
+                                // Show the filter dropdown dialog
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return Dialog(
+                                      child: DropDown(),
+                                    );
+                                  },
+                                );
+                              },
+                              child: Icon(Icons.filter_list),
+                            ),
                           ],
                         ),
                       ),
@@ -124,4 +138,10 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: HomePage(),
+  ));
 }

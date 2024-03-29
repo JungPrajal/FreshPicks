@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'product_details.dart'; // Import ProductDetails page
 
 class GrocerySearchDelegate extends SearchDelegate<String> {
@@ -36,12 +37,18 @@ class GrocerySearchDelegate extends SearchDelegate<String> {
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
+      GestureDetector(
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.filter_list),
+        ),
+      ),
       IconButton(
         icon: Icon(Icons.clear),
         onPressed: () {
           query = '';
         },
-      )
+      ),
     ];
   }
 
